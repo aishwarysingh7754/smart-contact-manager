@@ -1,3 +1,29 @@
 body {
-  background-color: aqua;
+  background-color: #8aafff;
+  color: black;
+}
+
+.navbar-nav .nav-link {
+  color: black !important;
+}
+
+.navbar-brand {
+  color: black !important;
+}
+
+.banner {
+  width: 100%;
+  height: 93vh;
+  background: url(../img/bg-new.jpg);
+  background-repeat: no-repeat;
+  background-size: contain; /* Change cover to contain */
+  background-position: center; /* Center the background image */
+  margin: 0; /* Add this to remove default margins */
+  padding: 0; /* Add this to remove default paddings */
+  box-sizing: border-box;
+  border: none;
+}
+
+.headline {
+  font-weight: 500;
 }
