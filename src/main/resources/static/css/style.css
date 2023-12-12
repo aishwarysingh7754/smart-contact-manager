@@ -3,6 +3,9 @@ body {
   color: black;
 }
 
+.bg-primary {
+  background-color: #8aafff;
+}
 .navbar-nav .nav-link {
   color: black !important;
 }
@@ -26,4 +29,10 @@ body {
 
 .headline {
   font-weight: 500;
+}
+
+.my-card {
+  padding: 50px;
+  background: whitesmoke;
+  border-radius: 10px;
 }
