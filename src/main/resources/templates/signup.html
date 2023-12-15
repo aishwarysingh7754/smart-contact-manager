@@ -25,6 +25,7 @@
               </div>
               <h1 class="text-center">Register here</h1>
               <form
+                novalidate
                 action=""
                 th:action="@{/do_register}"
                 method="post"
@@ -36,10 +37,21 @@
                     name="name"
                     type="text"
                     class="form-control"
+                    th:classappend="${#fields.hasErrors('name')} ? 'is-invalid' : ''"
                     id="name"
                     placeholder="Enter your name"
                     th:value="${user.name}"
                   />
+                  <div
+                    class="invalid-feedback"
+                    th:each="e : ${#fields.errors('name')}"
+                    th:text="${e}"
+                  >
+                    Please give valid name
+                  </div>
+                  <div
+                    th:text="${#fields.hasErrors('name')} ? 'Name has errors' : 'Name is valid'"
+                  ></div>
                 </div>
 
                 <div class="form-group">

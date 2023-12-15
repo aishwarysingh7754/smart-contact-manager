@@ -1,5 +1,10 @@
 package com.contact.smartcontactmanager.entities;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,19 +21,23 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @NotBlank(message = "name cannot be blank")
     private String name;
 
     private String nickName;
 
+    @Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits")
     private String phone;
 
     private String work;
 
+    @Email(message = "Invalid email format")
     private String email;
 
     private String image;
 
     @Column(length = 5000)
+    @Size(max = 5000, message = "Description length must be at most 5000 characters")
     private String description;
 
     @ManyToOne
